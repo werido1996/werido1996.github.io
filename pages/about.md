@@ -1,6 +1,7 @@
 ---
 layout: mypost
+isPage: true
 title: 关于我
 ---
 
-这里....
+补充内容

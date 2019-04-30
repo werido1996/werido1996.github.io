@@ -1,23 +1,38 @@
 encoding: utf-8
-title: TMaize'Blog
 
-# seo
-description: TMaize'Blog
-keywords: TMaize,Blog,TMaize'Blog
-author: TMaize
+# SEO相关信息
+title: werido1996
+description: werido1996的个人博客
+keywords: werido1996
+author: werido1996
+footerText: 'Copyright © 2019 备案号'
 
-baseurl: ""
-home: /
-categoriesurl: /pages/categories
-searchurl: /pages/search
-linksurl: /pages/links
-chaturl: /pages/chat
-abouturl: /pages/about
+# 域名配置,生成sitemap会用到，友链也会用到
+domainUrl: 'https://werido1996.github.io'
+# 路径配置，静态资源404一般是这里不对
+# 直接域名访问设置为'',有如果是user.github.io/blog/访问的话设置为'/blog'
+baseUrl: ''
 
-# 用于多说评论 填入留言板地址
-realchaturl: http://tmaize.oschina.io/pages/chat
+# 菜单
+menu:
+  - title: Home
+    url: /
+  - title: Categories
+    url: /pages/categories.html
+  - title: Search
+    url: /pages/search.html
+  - title: Links
+    url: /pages/links.html
+  - title: Chat
+    url: /pages/chat.html
+  - title: About
+    url: /pages/about.html
 
-cssurl: /static/css
-jsurl: /static/js
+# 文章url前缀，固定格式，不要动
+permalink: /posts/:year/:month/:day/:title.html
 
-permalink: /posts/:title.html
+kramdown:
+  auto_ids: true
+  input: GFM
+
+exclude: ['CNAME', 'README.md', 'build-tool']

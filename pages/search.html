@@ -1,15 +1,26 @@
 ---
-layout: default
+layout: page
+isPage: true
 title: 搜索
-css: [common.css,header.css,footer.css,totop.css,search.css]
-js: [common.js,header.js,totop.js,search.js]
+css: [blog.css]
+js: [blog.js,search.js,plugin.js]
 ---
-<div id="mysearch">
-	<div id="searchbox">
-		<input type="text" id="text-input" placeholder="请输入日期,标题,分类的关键字 ">
+<div class="container page-search animation-fade-up">
+	<h1 class="page-title" id="{{ page.title }}">{{ page.title }}</h1>
+	<input id="search-input" type="text" placeholder="小技巧：空格分隔多个关键字^_^"></input>
+	<div class="list-group">
+		<h2 id="搜索结果">搜索结果</h2>
+		<ul>
+			{% for post in site.posts  %}
+			<li class="search-item" style="display:none;">
+				<span class="date">{{ post.date | date: "%Y/%m/%d" }}</span>
+				<a href="{{site.baseUrl}}{{ post.url }}" class="title hover-underline">{{ post.title }}</a>
+				{% for categorie in post.categories %}
+				<a href="{{site.baseUrl}}/pages/categories.html#{{ categorie }}" class="categorie hover-underline">{{ categorie }}</a>
+				{% endfor %}
+			</li>
+			{% endfor %}
+		</ul>
 	</div>
-	<article>
-		<ul id="searchlist"></ul>
-	</article>
 </div>
 
