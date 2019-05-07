@@ -8,7 +8,7 @@ categories: [About]
 
 ## Code
 
-```javascript
+```Python script
 #! /usr/bin/env python
 # _*_  coding:utf-8 _*_
 import socket
